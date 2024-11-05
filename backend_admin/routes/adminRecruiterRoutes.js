@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const recruiterController = require("../../controllers/admin/AdminRecruiterController");
+const recruiterController = require("../controllers/AdminRecruiterController");
 
 router.get("/", recruiterController.getRecruiters);
 router.put("/approve", recruiterController.approveRecruiter);

@@ -1,6 +1,6 @@
 const express = require('express');
-const SystemSetting = require('../../models/admin/SystemSettings');
-const auth = require('../../middleware/admin/auth');
+const SystemSetting = require('../models/SystemSettings');
+const auth = require('../middleware/auth');
 
 const router = express.Router();
 

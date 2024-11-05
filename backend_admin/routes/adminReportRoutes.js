@@ -1,7 +1,7 @@
 const express = require('express');
-const Invoice = require('../../models/admin/adminInvoice');
-const { generateReport } = require('../../services/admin/adminReportService');
-const auth = require('../../middleware/admin/auth');
+const Invoice = require('../models/adminInvoice');
+const { generateReport } = require('../services/adminReportService');
+const auth = require('../middleware/auth');
 
 const router = express.Router();
 

@@ -1,5 +1,5 @@
-const Recruiter = require("../../models/admin/adminRecruiter");
-const sendEmail = require("../../utils/admin/sendEmail");
+const Recruiter = require("../models/adminRecruiter");
+const sendEmail = require("../utils/sendEmail");
 
 exports.getRecruiters = async (req, res) => {
   try {

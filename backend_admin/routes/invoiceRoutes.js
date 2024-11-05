@@ -1,7 +1,7 @@
 // routes/admin/invoiceRoutes.js
 const express = require('express');
-const Invoice = require('../../models/admin/adminInvoice');
-const Payment = require('../../models/admin/Payment');
+const Invoice = require('../models/adminInvoice');
+const Payment = require('../models/Payment');
 const mongoose = require('mongoose');
 
 const router = express.Router();

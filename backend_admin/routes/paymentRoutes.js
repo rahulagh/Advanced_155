@@ -1,9 +1,9 @@
 // routes/admin/paymentRoutes.js
 const express = require('express');
 const router = express.Router();
-const Payment = require('../../models/admin/Payment');
-const Invoice = require('../../models/admin/adminInvoice');
-const auth = require('../../middleware/admin/auth');
+const Payment = require('../models/Payment');
+const Invoice = require('../models/adminInvoice');
+const auth = require('../middleware/auth');
 const mongoose = require('mongoose');
 
 // Get all payments with filtering
