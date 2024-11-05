@@ -1,0 +1,45 @@
+Dashboard container
+.dashboard-container {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+/* Main content by default occupies full width */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* When sidebar is open */
+.dashboard-container.sidebar-open .main-content {
+    margin-left: 250px; /* Adjust this based on sidebar width */
+}
+
+/* Sidebar styles (from your existing CSS) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.hamburger {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}

@@ -1,0 +1,35 @@
+/* Background image and general styling */
+.login-container {
+    background-image: url('../images/login-background.jpg');  /* Corrected path */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.card {
+    max-width: 400px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.85);  /* Slight transparency */
+}
+
+.form-control {
+    background-color: #f1f1f1;
+    border-radius: 6px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+}
+
+/* Register link styles */
+.register-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

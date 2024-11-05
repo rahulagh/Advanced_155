@@ -1,0 +1,56 @@
+/* src/components/RecruiterManagement/ProfileList.css */
+.profile-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for contrast */
+  }
+  
+  .profile-list {
+    width: 100%;
+    max-width: 800px; /* Limit width for larger screens */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px; /* Space between list and modal */
+  }
+  
+  .profile-list h2 {
+    font-size: 2em; /* Larger heading size */
+    margin-bottom: 15px;
+  }
+  
+  .profile-list ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+  }
+  
+  .profile-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center align items */
+    padding: 10px;
+    border-bottom: 1px solid #e9ecef; /* Divider line */
+    transition: background-color 0.2s; /* Smooth background change */
+  }
+  
+  .profile-list li:hover {
+    background-color: #f1f1f1; /* Light background on hover */
+  }
+  
+  .profile-list button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Button padding */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .profile-list button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

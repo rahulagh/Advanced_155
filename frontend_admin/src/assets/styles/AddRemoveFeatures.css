@@ -1,0 +1,86 @@
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-select {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #e3e3e3;
+    width: 100%;
+  }
+  
+  .feature-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .input-field {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    flex: 1 1 30%;
+  }
+  
+  .add-feature-button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-feature-button:hover {
+    background-color: #218838;
+  }
+  
+  .features-title {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  
+  .feature-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .feature-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+  
+  .remove-feature-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .remove-feature-button:hover {
+    background-color: #c82333;
+  }
+  

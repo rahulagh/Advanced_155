@@ -1,0 +1,19 @@
+/* Footer Styles */
+footer {
+    background-color: #343a40;   /* Dark background for contrast */
+    color: white;                /* White text for visibility */
+    display: flex;               /* Enable Flexbox */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */
+    padding: 10px 0;             /* Add padding for space */
+    position: fixed;             /* Fix it to the bottom */
+    bottom: 0;                   /* Stick to the bottom */
+    width: 100%;                 /* Full width across the page */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1000;               /* Ensure it's on top of other elements */
+}
+
+footer p {
+    margin: 0;                   /* Remove extra margin */
+    font-size: 14px;             /* Font size appropriate for footer */
+}

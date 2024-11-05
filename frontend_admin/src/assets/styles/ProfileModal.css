@@ -1,0 +1,49 @@
+/* src/components/RecruiterManagement/ProfileModal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    width: 400px;
+    box-sizing: border-box;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.8em; /* Larger font size for profile name */
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    margin: 8px 0;
+    font-size: 1em; /* Increased font size for readability */
+  }
+  
+  .modal-content button {
+    background-color: #dc3545; /* Bootstrap danger color for close button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%; /* Full width button */
+  }
+  
+  .modal-content button:hover {
+    background-color: #c82333; /* Darker red on hover */
+  }
+  
