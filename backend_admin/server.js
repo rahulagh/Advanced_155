@@ -6,6 +6,20 @@ const connectDB = require('./config/db');
 const errorHandler = require('./utils/errorHandler');
 const auditTrailRoutes = require('./routes/auditTrailRoutes'); 
 const planChangeLogRoutes = require('./routes/planChangeLogRoutes');
+//
+const adminUserRoutes = require('./routes/admin/userRoutes');
+const adminInvoiceRoutes = require('./routes/admin/invoiceRoutes');
+const paymentRoutes = require('./routes/admin/paymentRoutes');
+const adminReportRoutes = require('./routes/admin/adminReportRoutes');
+const settingsRoutes = require('./routes/admin/settingsRoutes');
+const systemSettingsRoutes = require('./routes/admin/systemSettingsRoutes');
+const adminRecruiterRoutes=require('./routes/admin/adminRecruiterRoutes')
+const usersssRoutes=require('./routes/admin/userSsRoutes')
+
+
+const { connectDB } = require("././config/db");
+const { initCronJobs } = require("././utils/recruiter/cronJobs");
+// const app = express();
 
 // Load environment variables
 dotenv.config();

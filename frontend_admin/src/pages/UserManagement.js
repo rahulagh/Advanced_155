@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProfileDetails from '../components/UserManagement/ProfileDetails';
 import UpdatePlans from '../components/UserManagement/UpdatePlans';
 import ChangeQuotas from '../components/UserManagement/ChangeQuotas';
@@ -6,9 +6,102 @@ import DeactivateAccount from '../components/UserManagement/DeactivateAccount';
 import ReactivateAccount from '../components/UserManagement/ReactivateAccount';
 import '../../src/assets/styles/UserManagementPage.css'; // Custom CSS
 
+import styled from "styled-components";
+import UserList from "../components/ManageUsers/UserList";
+
+
+import api from  "../services/api";
+
+const Container = styled.div`
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-top:15px;
+  min-height: 100vh;
+  
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px;
+  }
+`;
+
+const Title = styled.h1`
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+`;
+
 const UserManagement = () => {
   const [selectedCard, setSelectedCard] = useState(null); // Track the selected card content
   const [selectedUserId, setSelectedUserId] = useState(null); // Store selected user ID
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const fetchUsers = async () => {
+    try {
+      setLoading(true);
+      const data = await api.getUsers();
+      console.log(data)
+      setUsers(data);
+    } catch (err) {
+      setError("Failed to fetch users. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUpdateUser = async (id, userData) => {
+    try {
+      await api.updateUser(id, userData);
+      fetchUsers();
+    } catch (err) {
+      setError("Failed to update user. Please try again.");
+    }
+  };
+
+  const handleApproveCertification = async (id) => {
+    try {
+      await api.approveCertification(id);
+      fetchUsers();
+    } catch (err) {
+      setError("Failed to approve certification. Please try again.");
+    }
+  };
+
+  const handleRejectCertification = async (id, reason) => {
+    try {
+      await api.rejectCertification(id, reason);
+      fetchUsers();
+    } catch (err) {
+      setError("Failed to reject certification. Please try again.");
+    }
+  };
+
+  if (loading) {
+    return (
+      <Container>
+       <div className="loading">Loading...</div>;
+      </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Container>
+        <Title>Error: {error}</Title>
+      </Container>
+    );
+  }
 
   // Function to handle card clicks and display content
   const handleCardClick = (card, userId = null) => {
@@ -79,6 +172,19 @@ const UserManagement = () => {
           </div>
         </div>
       )}
+
+      <div>
+          <Container>
+          {/* <h2>Users Management</h2> */}
+          <UserList
+            users={users}
+            onUpdateUser={handleUpdateUser}
+            onApproveCertification={handleApproveCertification}
+            onRejectCertification={handleRejectCertification}
+          />
+        </Container>
+      </div>
+
     </div>
   );
 };
