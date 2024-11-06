@@ -23,6 +23,9 @@ const settingsRoutes = require('./routes/settingsRoutes');
 const systemSettingsRoutes = require('./routes/systemSettingRoutes');
 const adminRecruiterRoutes=require('./routes/adminRecruiterRoutes')
 const usersssRoutes=require('./routes/userSsRoutes')
+// 
+const recruiterRoutes = require("./routes/recruiterRoutes");
+
 
 
 // const { connectDB } = require("././config/db");
@@ -81,6 +84,7 @@ app.use('/api', adminReportRoutes);
 app.use('/api', settingsRoutes);
 app.use('/api', systemSettingsRoutes);
 // app.use("/api/recruiters", adminRecruiterRoutes);
+app.use("/recruiters", recruiterRoutes);
 app.use("/api/usersSS", usersssRoutes);
 
 // API Routes
