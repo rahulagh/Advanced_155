@@ -1,9 +1,9 @@
 const cron = require('node-cron');
-const Invoice = require('../../models/admin/adminInvoice');
-const User = require('../../models/admin/AdminUser');
-const Settings = require('../../models/admin/Settings');
+const Invoice = require('../models/adminInvoice');
+const User = require('../models/AdminUser');
+const Settings = require('../models/Settings');
 const { sendReminderEmail, sendAdminAlertEmail } = require('./AdminEmailService');
-const { isWithinDays } = require('../../utils/admin/dateUtils');
+const { isWithinDays } = require('../utils/dateUtils');
 
 const sendReminders = async () => {
   try {

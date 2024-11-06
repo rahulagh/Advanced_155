@@ -1,6 +1,6 @@
 const UserSchema = require("../models/UserSchema");
 const sendEmail = require("../utils/sendEmail");
-const User = require('../models/user/User')
+const User = require('../models/User')
 
 exports.getUsers = async (req, res) => {
   try {

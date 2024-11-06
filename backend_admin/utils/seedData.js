@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs');
-const Invoice = require('../../models/admin/adminInvoice');
-const Payment = require('../../models/admin/Payment');
-const User = require('../../models/admin/AdminUser');
+const Invoice = require('../models/adminInvoice');
+const Payment = require('../models/Payment');
+const User = require('../models/AdminUser');
 const { addDays } = require('./dateUtils');
 
 exports.seedData = async () => {
