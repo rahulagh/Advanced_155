@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { fetchUsers, fetchAnalyticsData } from '../services/api'; // Import your API functions
+import { fetchUsers, fetchAnalyticsData, getAllUsers } from '../services/api'; // Import your API functions
 import { UserCircle, Users, CreditCard, BarChart2, Settings, LogOut, Menu, Home } from 'lucide-react';
 import UsageHistoryPage from '../pages/UsageHistoryPage';
 import UserManagement from '../pages/UserManagement';
 import PlanManagementPage from '../pages/PlanManagementPage';
 import SettingsPage from '../pages/SettingsPage';
 import RecruiterManagementPage from '../pages/RecruiterManagementPage';
+import { useNavigate } from 'react-router-dom';
+// import {getUsers} from "../services/api"
+
 
 const Sidebar = ({ activeItem, setActiveItem, isOpen, toggleSidebar }) => {
   const menuItems = [
@@ -16,6 +19,13 @@ const Sidebar = ({ activeItem, setActiveItem, isOpen, toggleSidebar }) => {
     { icon: <BarChart2 />, label: 'Usage History' },
     { icon: <Settings />, label: 'Settings' },
   ];
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('adminToken');
+    localStorage.removeItem('user');
+    navigate('/login');
+  }
 
   return (
     <div className={`${isOpen ? 'w-64' : 'w-16'} h-screen bg-gray-800 text-white p-4 transition-all duration-300`}>
@@ -42,7 +52,7 @@ const Sidebar = ({ activeItem, setActiveItem, isOpen, toggleSidebar }) => {
       </nav>
       <button
         className="flex items-center w-full p-2 rounded hover:bg-red-600 mt-auto"
-        onClick={() => console.log('Logout clicked')}
+        onClick={handleLogout}
       >
         <LogOut />
         {isOpen && <span className="ml-2">Logout</span>}
@@ -60,7 +70,7 @@ const DashboardContent = ({ activeItem }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const users = await fetchUsers();
+        const users = await getAllUsers();
         const analytics = await fetchAnalyticsData();
 
         setTotalUsers(users.length); // Assuming users is an array
@@ -105,9 +115,11 @@ const DashboardContent = ({ activeItem }) => {
   );
 };
 
+
 const AdminDashboard = () => {
   const [activeItem, setActiveItem] = useState('Home');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

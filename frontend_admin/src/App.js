@@ -10,6 +10,7 @@ import { AuthProvider } from './context/AuthContext';
 import RecruiterManagementPage from './pages/RecruiterManagementPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ProfileList from './components/RecruiterManagement/ProfileList'; // Importing ProfileList
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -18,15 +19,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
+          <Route path='/register' element={<Register />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/plan-management" element={<PlanManagementPage />} />
           <Route path="/user-management/*" element={<UserManagement />} />
           <Route path="/usage-history" element={<UsageHistoryPage />} />
-          <Route path="/settings" element={<SettingsPage />} /> 
-          
+          <Route path="/settings" element={<SettingsPage />} />
           {/* Adding the recruiter profile list route */}
           <Route path="/recruiter-profiles" element={<ProfileList />} />
-          
+
           <Route path="/Recruiter-Management" element={<RecruiterManagementPage />} />
         </Routes>
       </Router>
